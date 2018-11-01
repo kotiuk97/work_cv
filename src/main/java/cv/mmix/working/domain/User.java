@@ -17,17 +17,18 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-//
-//    private String firstName;
-//    private String lastName;
-//    private String companyName;
-//
-//    @NotBlank(message = "This field cannot be empty")
-//    private String phoneNumber;
-//
-//    @Email(message = "Email is not correct")
-//    @NotBlank(message = "Email cannot be empty")
-//    private String email;
+
+    private String firstName;
+    private String lastName;
+    private String companyName;
+    private Date registrationDate;
+
+    @NotBlank(message = "This field cannot be empty")
+    private String phoneNumber;
+
+    @Email(message = "Email is not correct")
+    @NotBlank(message = "Email cannot be empty")
+    private String email;
 
     @NotBlank(message = "Password cannot be empty")
     private String password;
@@ -35,45 +36,11 @@ public class User {
 //    @Transient
 //    private String password2;
 
-//    private Role role;
-
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
-    @Enumerated(EnumType.STRING)
-    @Transient
-    private Set<Role> roles;
-
-    private String username;
     private boolean active;
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public Set<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-//    private Date registrationDate;
-//
 //    private String activationCode;
 //    private boolean isActive;
 //    private boolean isBlocked;
@@ -81,10 +48,18 @@ public class User {
     public User() {
     }
 
-    public User(@NotBlank(message = "Password cannot be empty") String password, Set<Role> roles, String username, boolean active) {
+//    private String username;
+//
+//    public String getUsername() {
+//        return username;
+//    }
+//
+//    public void setUsername(String username) {
+//        this.username = username;
+//    }
+
+    public User(@NotBlank(message = "Password cannot be empty") String password, String username, boolean active) {
         this.password = password;
-        this.roles = roles;
-        this.username = username;
         this.active = active;
     }
 
@@ -113,37 +88,37 @@ public class User {
         this.id = id;
     }
 
-//    public String getFirstName() {
-//        return firstName;
-//    }
-//
-//    public void setFirstName(String firstName) {
-//        this.firstName = firstName;
-//    }
-//
-//    public String getLastName() {
-//        return lastName;
-//    }
-//
-//    public void setLastName(String lastName) {
-//        this.lastName = lastName;
-//    }
-//
-//    public String getPhoneNumber() {
-//        return phoneNumber;
-//    }
-//
-//    public void setPhoneNumber(String phoneNumber) {
-//        this.phoneNumber = phoneNumber;
-//    }
-//
-//    public String getEmail() {
-//        return email;
-//    }
-//
-//    public void setEmail(String email) {
-//        this.email = email;
-//    }
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getPassword() {
         return password;
@@ -153,14 +128,14 @@ public class User {
         this.password = password;
     }
 
-//    public Role getRole() {
-//        return role;
-//    }
-//
-//    public void setRole(Role role) {
-//        this.role = role;
-//    }
-//
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
 //    public String getActivationCode() {
 //        return activationCode;
 //    }
@@ -184,22 +159,22 @@ public class User {
 //    public void setBlocked(boolean blocked) {
 //        isBlocked = blocked;
 //    }
-//
-//    public Date getRegistrationDate() {
-//        return registrationDate;
-//    }
-//
-//    public void setRegistrationDate(Date registrationDate) {
-//        this.registrationDate = registrationDate;
-//    }
-//
-//    public String getCompanyName() {
-//        return companyName;
-//    }
-//
-//    public void setCompanyName(String companyName) {
-//        this.companyName = companyName;
-//    }
+
+    public Date getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(Date registrationDate) {
+        this.registrationDate = registrationDate;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
 
     @Override
     public boolean equals(Object o) {

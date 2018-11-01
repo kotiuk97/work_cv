@@ -11,8 +11,9 @@ import cv.mmix.working.domain.User;
 import cv.mmix.working.repos.UserRepo;
 
 import javax.validation.Valid;
+import java.sql.Date;
+import java.util.Calendar;
 import java.util.Collections;
-import java.util.Date;
 
 @Controller
 public class LoginController {
@@ -26,6 +27,11 @@ public class LoginController {
     @GetMapping("/rabota/registration")
     public String registration(){
         return "registration";
+    }
+
+    @GetMapping("/rabota/employer/registration")
+    public String employerRegistration(){
+        return "employer-registration";
     }
 
     @PostMapping("/rabota/registration")
@@ -51,7 +57,7 @@ public class LoginController {
 //        user.setRole(Role.USER);
         user.setActive(true);
         user.setRole(Role.USER);
-        user.setRoles(Collections.singleton(Role.USER));
+        user.setRegistrationDate(new Date(Calendar.getInstance().getTime().getTime()));
 //        user.setUsername(user.getFirstName());
         userRepo.save(user);
 //        userService.addUser(user);
@@ -75,7 +81,7 @@ public class LoginController {
 //            model.addAttribute("usernameError", "User exists!");
 //            return "registration";
 //        }
-        return "redirect:/rabota/login";
+        return "redirect:/login";
     }
 
     @PostMapping("/rabota/employer/registration")
@@ -92,12 +98,15 @@ public class LoginController {
 //        user.setRole(Role.EMPLOYER);
 //
 //        user.setRegistrationDate(new Date());
+        user.setActive(true);
+        user.setRole(Role.EMPLOYER);
+        user.setRegistrationDate(new Date(Calendar.getInstance().getTime().getTime()));
         userRepo.save(user);
 
-        boolean isConfirmEmpty = Strings.isEmpty(passwordConfirmation);
-        if (isConfirmEmpty){
-            model.addAttribute("password2Error", "Password confirmation cannot be empty");
-        }
+//        boolean isConfirmEmpty = Strings.isEmpty(passwordConfirmation);
+//        if (isConfirmEmpty){
+//            model.addAttribute("password2Error", "Password confirmation cannot be empty");
+//        }
 //        if (user.getPassword() != null && !user.getPassword().equals(passwordConfirmation)){
 //            model.addAttribute("password2Error", "passwords are not equal");
 //        }

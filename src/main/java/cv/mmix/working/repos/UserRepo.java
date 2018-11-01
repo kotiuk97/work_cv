@@ -7,5 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 public interface UserRepo extends JpaRepository<User, Long> {
 
 //    User findByEmail(String email);
-    User findByUsername(String username);
+    User findByFirstName(String firstName);
+//    User findByUsername(String username);
 }

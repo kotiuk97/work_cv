@@ -32,10 +32,10 @@
                             ${passwordError}
                         </div>
                     </#if>
-                    <div class="mt-4  text-center">
-                        <button type="submit" class="btn btn-primary col-4">Log in</button>
-                        <a href="/rabota/registration" class="btn btn-primary ml-3 col-4">Sign up</a>
-
+                    <div class="mt-4 ">
+                        <button type="submit" class="btn btn-primary">Log in</button>
+                        <a href="/rabota/registration" class="btn btn-primary ml-1">Sign up</a>
+                        <a href="/rabota/employer/registration" class="btn btn-primary ml-1">Employer registration</a>
                     </div>
                 </div>
             </div>

@@ -1,12 +1,12 @@
 <#import "parts/common.ftl" as c>
 
 <@c.page>
-    <form>
+    <form action="/rabota/vacancy" method="post">
         <h3 class="text-center mb-3 alert alert-primary">Create a vacancy</h3>
         <div class="form-group row">
-            <label for="vacancyName" class="col-sm-2 col-form-label">Vacancy name</label>
+            <label for="name" class="col-sm-2 col-form-label">Vacancy name</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="vacancyName" id="vacancyName" placeholder="e.g. Manager">
+                <input type="text" class="form-control" name="name" id="name" placeholder="e.g. Manager">
             </div>
         </div>
 
@@ -20,7 +20,7 @@
         <div class="form-group row">
             <label for="contactPerson" class="col-sm-2 col-form-label">Contact person</label>
             <div class="col-sm-10" id="contactPerson">
-                <input type="text" class="form-control" placeholder="Name Surname">
+                <input type="text" class="form-control" name="contactPerson" placeholder="Name Surname">
             </div>
         </div>
 

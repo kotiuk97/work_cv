@@ -63,11 +63,13 @@
                             ${password2Error}
                         </div>
                  </#if>
+                 <div class="mt-4 text-center">
+                     <button type="submit" class="btn btn-primary col-4">Register company</button>
+                 </div>
              </div>
          </div>
 
          <input type="hidden" name="_csrf" value="${_csrf.token}">
-         <button type="submit" class="btn btn-primary">Sign up</button>
 
 
 

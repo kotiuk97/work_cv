@@ -11,14 +11,17 @@
                 <a class="nav-link" href="/rabota/main">Find a job</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/user">Post a resumes</a>
+                <a class="nav-link" href="/rabota/user">Post a resumes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/rabota/login">Log in</a>
+                <a class="nav-link" href="/rabota/vacancy">Publish a vacancy</a>
             </li>
-             <li class="nav-item">
-                 <a class="nav-link" href="/rabota/employer/login">For employers</a>
-             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Log in</a>
+            </li>
+             <#--<li class="nav-item">-->
+                 <#--<a class="nav-link" href="/rabota/employer/login">For employers</a>-->
+             <#--</li>-->
         </ul>
     </div>
 </nav>
